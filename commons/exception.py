@@ -1,0 +1,2 @@
+class TranslatorTypeNotFound(Exception):
+    pass
