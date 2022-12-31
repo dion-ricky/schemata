@@ -1,4 +1,3 @@
-import inspect
 from typing import get_type_hints, Any, Dict
 
 from commons.model import ParameterizedType, Schemata, Schema
