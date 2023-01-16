@@ -1,0 +1,20 @@
+# pyproject.toml
+
+[build-system]
+requires = ["setuptools>=61.0.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "schemata"
+version = "0.1.0"
+description = "A thin layer of abstraction between schema definition and schema generation."
+readme = "README.md"
+authors = [{ name = "dion-ricky", email = "personal@dionricky.com" }]
+dependencies = [
+    "attrs >= 22.1.0",
+    "pytest >= 7.2.0",
+    "pytest-cov >= 4.0.0"
+]
+
+[project.urls]
+Homepage = "https://github.com/dion-ricky/schemata"
