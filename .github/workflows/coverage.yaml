@@ -14,7 +14,9 @@ jobs:
         run: pip install -r requirements.txt
       
       - name: Run tests and collect coverage
-        run: pytest --cov .
+        run: |
+          export PYTHONPATH=./src/schemata
+          pytest --cov .
       
       - name: Upload coverage reports to Codecov
         run: |
