@@ -1,4 +1,5 @@
 # schemata
+[![codecov](https://codecov.io/gh/dion-ricky/schemata/branch/master/graph/badge.svg?token=D81L4WPQRU)](https://codecov.io/gh/dion-ricky/schemata)
 
 A thin layer of abstraction between schema definition and schema generation. Define once, transform all you want (not a good catchphrase, I know..)
 
