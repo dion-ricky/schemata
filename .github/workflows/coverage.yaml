@@ -15,7 +15,7 @@ jobs:
       
       - name: Run tests and collect coverage
         run: |
-          export PYTHONPATH=./src/schemata
+          export PYTHONPATH=./src
           pytest --cov .
       
       - name: Upload coverage reports to Codecov
