@@ -1,6 +1,6 @@
 from typing import get_type_hints, Any, Dict
 
-from commons.model import ParameterizedType, Schemata, Schema
+from schemata.commons.model import ParameterizedType, Schemata, Schema
 
 
 def parse_schema(raw_schemata: Dict[str, Any]):

@@ -14,7 +14,7 @@ class TestTranslator:
 
     @fixture
     def schemata_with_parameter(self):
-        from commons.special_type import Required
+        from schemata.commons.special_type import Required
 
         class SchemataWithParam:
             id: Required[int]
@@ -40,8 +40,8 @@ class TestTranslator:
         return SchemataWithDep
 
     def test_translate_no_dep(self, schemata_no_dep):
-        from translator.dummy import Dummy
-        from commons.utils import resolve_dependency
+        from schemata.translator.dummy import Dummy
+        from schemata.commons.utils import resolve_dependency
 
         translator = Dummy()
         schemata = resolve_dependency(schemata_no_dep)
@@ -57,8 +57,8 @@ class TestTranslator:
         }]
 
     def test_translate_with_param(self, schemata_with_parameter):
-        from translator.dummy import Dummy
-        from commons.utils import resolve_dependency
+        from schemata.translator.dummy import Dummy
+        from schemata.commons.utils import resolve_dependency
 
         translator = Dummy()
         schemata = resolve_dependency(schemata_with_parameter)
@@ -74,8 +74,8 @@ class TestTranslator:
         }]
 
     def test_translate_with_inheritance(self, schemata_with_inheritance):
-        from translator.dummy import Dummy
-        from commons.utils import resolve_dependency
+        from schemata.translator.dummy import Dummy
+        from schemata.commons.utils import resolve_dependency
 
         translator = Dummy()
         schemata = resolve_dependency(schemata_with_inheritance)
@@ -95,8 +95,8 @@ class TestTranslator:
         }]
 
     def test_translate_with_dep(self, schemata_with_dep):
-        from translator.dummy import Dummy
-        from commons.utils import resolve_dependency
+        from schemata.translator.dummy import Dummy
+        from schemata.commons.utils import resolve_dependency
 
         translator = Dummy()
         schemata = resolve_dependency(schemata_with_dep)
@@ -122,9 +122,9 @@ class TestTranslator:
 
     def test_translate_raises(self):
         from typing import Tuple
-        from translator.dummy import Dummy
-        from commons.utils import resolve_dependency
-        from commons.exception import TranslatorTypeNotFound
+        from schemata.translator.dummy import Dummy
+        from schemata.commons.utils import resolve_dependency
+        from schemata.commons.exception import TranslatorTypeNotFound
 
         class Schemata:
             names: Tuple[str]
@@ -137,8 +137,8 @@ class TestTranslator:
 
     def test_translate_repeated(self):
         from typing import List
-        from translator.dummy import Dummy
-        from commons.utils import resolve_dependency
+        from schemata.translator.dummy import Dummy
+        from schemata.commons.utils import resolve_dependency
 
         class Schemata:
             names: List[str]

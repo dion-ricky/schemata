@@ -12,7 +12,7 @@ class TestUtils:
         yield RawSchema
 
     def test_parse_schema(self, raw_schema):
-        from commons.utils import parse_schema
+        from schemata.commons.utils import parse_schema
 
         assert parse_schema(raw_schema) == {
             'id': int,

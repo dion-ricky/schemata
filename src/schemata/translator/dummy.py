@@ -1,6 +1,6 @@
-from translator.translator import Translator
-from commons.model import Schema, Schemata
-from commons.exception import TranslatorTypeNotFound
+from schemata.translator import Translator
+from schemata.commons.model import Schema, Schemata
+from schemata.commons.exception import TranslatorTypeNotFound
 
 
 class Dummy(Translator):

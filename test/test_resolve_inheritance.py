@@ -31,8 +31,8 @@ class TestResolveInheritance:
         yield SchemataDblInheritance
 
     def test_no_inheritance(self, schemata_no_inheritance):
-        from commons.utils import resolve_inheritance
-        from commons.model import Schemata, Schema
+        from schemata.commons.utils import resolve_inheritance
+        from schemata.commons.model import Schemata, Schema
 
         id = Schema('id', int)
         name = Schema('name', str)
@@ -42,8 +42,8 @@ class TestResolveInheritance:
 
     def test_inherit_once(self, schemata_with_inheritance):
         from datetime import datetime
-        from commons.utils import resolve_inheritance
-        from commons.model import Schemata, Schema
+        from schemata.commons.utils import resolve_inheritance
+        from schemata.commons.model import Schemata, Schema
 
         id = Schema('id', int)
         name = Schema('name', str)
@@ -54,8 +54,8 @@ class TestResolveInheritance:
 
     def test_double_inheritance(self, schemata_dbl_inheritance):
         from datetime import datetime
-        from commons.utils import resolve_inheritance
-        from commons.model import Schemata, Schema
+        from schemata.commons.utils import resolve_inheritance
+        from schemata.commons.model import Schemata, Schema
 
         id = Schema('id', int)
         name = Schema('name', str)

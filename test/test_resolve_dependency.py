@@ -14,7 +14,7 @@ class TestResolveDependency:
 
     @fixture
     def schemata_with_parameter(self):
-        from commons.special_type import Nullable
+        from schemata.commons.special_type import Nullable
 
         class SchemataWithParam:
             id: int
@@ -33,7 +33,7 @@ class TestResolveDependency:
 
     @fixture
     def schemata_with_param_and_dep(self, schemata_no_dep):
-        from commons.special_type import Nullable
+        from schemata.commons.special_type import Nullable
 
         class SchemataWithParamAndDep:
             entity: Nullable[schemata_no_dep]
@@ -42,8 +42,8 @@ class TestResolveDependency:
         yield SchemataWithParamAndDep
 
     def test_resolve_no_dep(self, schemata_no_dep):
-        from commons.utils import resolve_dependency
-        from commons.model import Schemata, Schema
+        from schemata.commons.utils import resolve_dependency
+        from schemata.commons.model import Schemata, Schema
 
         id = Schema('id', int)
         name = Schema('name', str)
@@ -52,8 +52,8 @@ class TestResolveDependency:
         assert resolve_dependency(schemata_no_dep) == schemata
 
     def test_resolve_with_dep(self, schemata_with_dep):
-        from commons.utils import resolve_dependency
-        from commons.model import Schemata, Schema
+        from schemata.commons.utils import resolve_dependency
+        from schemata.commons.model import Schemata, Schema
 
         id = Schema('id', int)
         name = Schema('name', str)
@@ -67,9 +67,9 @@ class TestResolveDependency:
         assert resolve_dependency(schemata_with_dep) == schemata_outer
 
     def test_resolve_parameterized(self, schemata_with_parameter):
-        from commons.utils import resolve_dependency
-        from commons.model import Schemata, Schema, ParameterizedType
-        from commons.special_type import Nullable
+        from schemata.commons.utils import resolve_dependency
+        from schemata.commons.model import Schemata, Schema, ParameterizedType
+        from schemata.commons.special_type import Nullable
 
         id = Schema('id', int)
         nullable_str = ParameterizedType(Nullable[str], Nullable, (str, ))
@@ -81,9 +81,9 @@ class TestResolveDependency:
 
     def test_resolve_parameterized_with_dep(self, schemata_no_dep,
                                             schemata_with_param_and_dep):
-        from commons.utils import resolve_dependency
-        from commons.model import Schemata, Schema, ParameterizedType
-        from commons.special_type import Nullable
+        from schemata.commons.utils import resolve_dependency
+        from schemata.commons.model import Schemata, Schema, ParameterizedType
+        from schemata.commons.special_type import Nullable
 
         id = Schema('id', int)
         name = Schema('name', str)
