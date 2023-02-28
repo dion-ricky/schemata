@@ -1,7 +1,7 @@
 import logging
 
-from commons.model import Schema, ParameterizedType
-from commons.exception import TranslatorTypeNotFound
+from schemata.commons.model import Schema, ParameterizedType
+from schemata.commons.exception import TranslatorTypeNotFound
 
 
 class Translator:

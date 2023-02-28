@@ -1,7 +1,7 @@
 from datetime import date, datetime
 
-from commons.type import Long
-from commons.special_type import Required, PII_HIGH
+from schemata.commons.type import Long
+from schemata.commons.special_type import Required, PII_HIGH
 
 
 class CustomerEntity:
